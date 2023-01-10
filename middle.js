@@ -27,9 +27,20 @@ const assertArraysEqual = function(actual, expected) {
   result ? console.log(success) : console.log(failure);
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, 3, 4], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [3, 2, 1]);
+const middle = function(arr) {
+  let middleIndex = (arr.length - 1) / 2;
+  let mid = [];
 
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
+  if (Number.isInteger(middleIndex)) {
+    mid.push(arr[middleIndex])
+  } else {
+    mid.push(arr[Math.floor(middleIndex)]);
+    mid.push(arr[Math.ceil(middleIndex)]);
+  }
+
+  return mid;
+}
+
+assertArraysEqual(middle([1, 2, 3]), [2]);
+assertArraysEqual(middle(['apple', 'banana', 'pear', 'orange']), ['banana', 'pear']);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
