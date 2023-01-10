@@ -29,7 +29,7 @@ const eqObjects = function(object1, object2) {
       return false;
     }
   }
-  
+
   return true;
 };
 
@@ -59,7 +59,7 @@ const alfaRomeoF1 = {
   color: 'red',
   engine: 'ferrari',
   drivers: 'Guanyu Zhou'
-}
+};
 
 assertEqual(eqObjects(ferrariF1, alfaRomeoF1), false);
 
@@ -67,7 +67,7 @@ const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
 assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), true); // => true
 
-const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false); // => false
 
-console.log(typeof multiColorShirtObject.colors)
+console.log(typeof multiColorShirtObject.colors);
