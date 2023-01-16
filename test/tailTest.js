@@ -1,15 +1,14 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-const oneElem = tail(['the only one']);
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
-
-assertEqual(oneElem.length, 0); // ensure element is blank
-
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+describe("#tail", () => {
+  it("returns 3 for [1, 2, 3]", () => {
+    assert.strictEqual(tail([1, 2, 3]), 3);
+  });
+  it("returns 'the only one' for ['the only one']", () => {
+    assert.strictEqual(tail(['the only one']), 'the only one');
+  });
+  it("returns 'Labs' for ['Yo Yo', 'Lighthouse', 'Labs']", () => {
+    assert.strictEqual(tail(['Yo Yo', 'Lighthouse', 'Labs']), 'Labs');
+  });
+});

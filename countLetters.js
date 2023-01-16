@@ -21,6 +21,8 @@ let countLetters = function(str) {
   return result;
 };
 
+module.exports = countLetters;
+
 let result1 = countLetters('Lighthouse in the house');
 
 assertEqual(result1['l'], 1);

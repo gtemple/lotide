@@ -16,6 +16,8 @@ let without = function(source, itemsToRemove) {
   return result;
 }
 
+module.exports = without;
+
 const assertArraysEqual = function(actual, expected) {
   let failure = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
   let success = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
